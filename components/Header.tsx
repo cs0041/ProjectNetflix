@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { BellIcon, SearchIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
 import Image from 'next/image'
+import useAuth from '../hooks/useAuth'
 type Props = {}
 
 function Header({}: Props) {
   const [isScrolled, setisScrolled] = useState(false)
+  const { logout } = useAuth()
 
+  
   useEffect(() => {
    const hadnleScroll = () => {
     if(window.scrollY > 0) {
@@ -24,7 +27,7 @@ function Header({}: Props) {
   }, [])
   
   return (
-    <header className={`${isScrolled && "bg-red-500"}`}>
+    <header className={`${isScrolled && 'bg-red-500'}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
         <img
           src="https://rb.gy/ulxxee"
@@ -45,16 +48,17 @@ function Header({}: Props) {
         <SearchIcon className="hidden h-6 w-6 sm:inline" />
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="h-6 w-6" />
-        <Link href="/account">
-          <Image
-            src="https://rb.gy/g1pwyx"
-            alt="pic"
-            width={24}
-            height={1}
-            objectFit="contain"
-            className="cursor-pointer rounded"
-          />
-        </Link>
+        {/* <Link href="/account"> */}
+        <Image
+          src="https://rb.gy/g1pwyx"
+          alt="pic"
+          width={24}
+          height={1}
+          objectFit="contain"
+          className="cursor-pointer rounded"
+          onClick={logout}
+        />
+        {/* </Link> */}
       </div>
     </header>
   )
