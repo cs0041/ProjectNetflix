@@ -28,7 +28,7 @@ function Header({}: Props) {
   }, [])
   
   return (
-    <header className={`${isScrolled && 'bg-red-500'}`}>
+    <header className={`${isScrolled && 'bg-[#141414]'}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
         <img
           src="https://rb.gy/ulxxee"
@@ -37,7 +37,7 @@ function Header({}: Props) {
           className="cursor-pointer object-contain"
         />
 
-       <BasicMenu/>
+        <BasicMenu />
 
         <ul className="hidden space-x-4 md:flex">
           <li className="headerLink">Home</li>
@@ -52,15 +52,14 @@ function Header({}: Props) {
         <p className="hidden lg:inline">Kids</p>
         <BellIcon className="h-6 w-6" />
         <Link href="/account">
-        <Image
-          src="https://rb.gy/g1pwyx"
-          alt="pic"
-          width={24}
-          height={1}
-          objectFit="contain"
-          className="cursor-pointer rounded"
-       
-        />
+          <Image
+            src="https://rb.gy/g1pwyx"
+            alt="pic"
+            width={24}
+            height={1}
+            objectFit="contain"
+            className="cursor-pointer rounded"
+          />
         </Link>
       </div>
     </header>
