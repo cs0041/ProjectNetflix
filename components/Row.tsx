@@ -2,11 +2,11 @@ import React, { useRef, useState } from 'react'
 import {ChevronLeftIcon} from '@heroicons/react/outline'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 import Thumbnail from './Thumbnail'
+import { DocumentData } from '@firebase/firestore'
 
 interface Props {
   title: string
-  // movie : Movie | DocumentData
-  movies: Movie[]
+  movies : Movie[] | DocumentData[]
 }
 
 function Row({ title, movies }: Props) {

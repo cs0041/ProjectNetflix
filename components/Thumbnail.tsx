@@ -1,11 +1,11 @@
+import { DocumentData } from '@firebase/firestore'
 import Image from 'next/image'
 import React from 'react'
 import { useRecoilState } from 'recoil'
 import { modalState, movieState } from '../atoms/modalAtom'
 
 interface Props {
-  // movie : Movie | DocumentData
-  movie : Movie
+  movie : Movie | DocumentData
 }
 
 function Thumbnail({ movie }: Props) {
